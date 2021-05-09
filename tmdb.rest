@@ -1,0 +1,29 @@
+@host = {{$dotenv VITE_TMDB_HOST}}
+@token = {{$dotenv VITE_TMDB_TOKEN}}
+@auth = Bearer {{token}}
+
+GET {{host}}/movie/550
+  ?append_to_response=keywords,credits,images
+  &include_image_language=en,null
+Authorization: {{auth}}
+
+###
+
+GET {{host}}/configuration
+Authorization: {{auth}}
+
+###
+
+GET {{host}}/genre/movie/list
+Authorization: {{auth}}
+
+###
+
+GET {{host}}/movie/popular
+Authorization: {{auth}}
+
+###
+
+GET {{host}}/search/multi
+  ?query=brad%20pitt
+Authorization: {{auth}}
