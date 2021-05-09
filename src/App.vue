@@ -1,6 +1,6 @@
 <template>
   <header>
-    <router-link :to="{ name: 'home' }">Movue</router-link>
+    <router-link :to="{ name: 'home' }">Moovue</router-link>
     <SearchBar />
   </header>
 
